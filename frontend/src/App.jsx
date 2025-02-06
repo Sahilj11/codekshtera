@@ -1,8 +1,13 @@
+import React from "react"
+import Navbar from "./components/Navbar"
+import Home from "./components/Home"
 function App() {
-
   return (
     <>
-      <div className='bg-red-500 h-screen w-screen'></div>
+      <div className=' h-screen w-screen overflow-x-hidden'>
+        <Navbar/>
+        <Home/>
+      </div>
     </>
   )
 }
