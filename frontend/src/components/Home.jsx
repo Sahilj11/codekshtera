@@ -1,20 +1,31 @@
-import React from 'react'
-import { GlobeDemo } from './GlobeDemo'
+import React from 'react';
+import { GlobeDemo } from './GlobeDemo';
+
 const Home = () => {
   return (
-    <div className='bg-black  min-h-screen relative overflow-x-hidden flex items-center justify-center text-white'>
-    <div className=' mx-auto flex w-[40%] flex-col items-center p-8 rounded-lg shadow-2xl'>
-        <h1 className='md:text-4xl text:2xl text-orange-500 font-bold mb-4 text-center'>Find Your Dream Job</h1>
-        <p className='md:text-lg text-sm text-center mb-6'>Explore job listings, connect with employers, and take the next step in your career on our sleek dark-themed platform.</p>
-        <button className='bg-white text-black cursor-pointer px-3 py-1 md:px-6 md:py-2 rounded-full font-semibold hover:bg-gray-200 transition-colors shadow-lg'>Explore Jobs</button>
-    </div>
-    <div className=' w-[55%]  mt-6 '>
-        <div className='flex items-center justify-center h-full'>
-            <GlobeDemo />
-        </div>
-    </div>
-</div>
-  )
-}
+    <div className="bg-black min-h-screen relative overflow-x-hidden flex flex-col  md:flex-row  items-center text-white p-6 md:gap-8">
+      
+      
+      <div className="w-full md:w-1/2  flex flex-col items-center md:items-start p-8 rounded-lg shadow-2xl">
+        <h1 className="text-2xl md:text-4xl text-zinc-200 font-bold mb-4 md:text-left text-center">
+          Find Your Dream Job
+        </h1>
+        <p className="text-sm text-zinc-300 md:text-lg mb-6 md:text-left text-center">
+          Explore job listings, connect with employers, and take the next step in your career on our sleek dark-themed platform.
+        </p>
+        <button className="bg-white text-black cursor-pointer px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors shadow-lg">
+          Explore Jobs
+        </button>
+        
+      </div>
 
-export default Home
+     
+      <div className="w-full md:w-1/2 flex items-center justify-center mt-6 md:mt-0">
+        <GlobeDemo />
+      </div>
+
+    </div>
+  );
+};
+
+export default Home;
