@@ -393,39 +393,29 @@ export function GlobeDemo() {
   ];
 
   return (
-    (<div
-      className="flex flex-row items-center justify-center py-10 h-screen md:h-auto dark:bg-black bg-white relative w-full">
-      <div
-        className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
+    <div className="flex flex-col-reverse md:flex-row items-center justify-center py-10 h-auto md:h-screen dark:bg-black bg-white relative w-full">
+      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-auto md:h-[40rem] px-4 flex flex-col items-center">
+        {/* Animated Heading */}
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1,
-          }}
-          className="div">
-          <h2
-            className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
-            Makes Connections for Job Security
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className=" p-4 rounded-lg shadow-lg text-center w-full"
+        >
+          <h2 className="text-xl  md:text-4xl tracking-tighter font-semibold text-zinc-200">
+          🌍 Connect to a Global Network of Opportunities
           </h2>
-          <p
-            className="text-center text-base md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
-            This globe is interactive and customizable. Have fun with it, and
-            don&apos;t forget to share it. :)
-          </p>
         </motion.div>
-        <div
-          className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
-        <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
+  
+        {/* Background Gradient */}
+        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b from-transparent dark:to-black to-white pointer-events-none select-none z-40" />
+  
+        {/* Globe Section */}
+        <div className="w-full h-72 md:h-full relative z-10 flex items-center justify-center mt-6 md:mt-0">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>
-    </div>)
+    </div>
   );
+  
 }
