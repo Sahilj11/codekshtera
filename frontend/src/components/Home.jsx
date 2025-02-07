@@ -13,10 +13,15 @@ const Home = () => {
         <p className="text-sm text-zinc-300 md:text-lg mb-6 md:text-left text-center">
           Explore job listings, connect with employers, and take the next step in your career on our sleek dark-themed platform.
         </p>
+
+        <div className='flex gap-2'>
         <button className="bg-white text-black cursor-pointer px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors shadow-lg">
           Explore Jobs
         </button>
-        
+        <button className="bg-black text-white cursor-pointer px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold hover:bg-white hover:text-black border-1 border-white transition-colors shadow-lg">
+         Post Job
+        </button>
+        </div>
       </div>
 
      
