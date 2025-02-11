@@ -112,6 +112,12 @@ const Signup = () => {
         </form>
       </div>
     </div>
+<<<<<<< HEAD
+=======
+    // <div className="flex justify-center items-center min-h-screen bg-gray-100 dar:bg-black">
+    //  <iframe className="w-full h-screen" src="https://forms.visme.co/formsPlayer/kk3kdz6k-simple-newsletter-subscription" frameborder="0"></iframe>
+    // </div>
+>>>>>>> ef1a4f0 (Frontend Code Organzie)
   );
 };
 

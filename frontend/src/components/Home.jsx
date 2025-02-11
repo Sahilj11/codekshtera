@@ -1,5 +1,9 @@
 import React from 'react';
 import { GlobeDemo } from './GlobeDemo';
+<<<<<<< HEAD
+=======
+import { Link } from 'react-router-dom';
+>>>>>>> ef1a4f0 (Frontend Code Organzie)
 
 const Home = () => {
   return (
@@ -15,12 +19,21 @@ const Home = () => {
         </p>
 
         <div className='flex gap-2'>
+<<<<<<< HEAD
         <button className="bg-white text-black cursor-pointer px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors shadow-lg">
           Explore Jobs
         </button>
         <button className="bg-black text-white cursor-pointer px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold hover:bg-white hover:text-black border-1 border-white transition-colors shadow-lg">
          Post Job
         </button>
+=======
+      <Link to="/user-dashboard">  <button className="bg-white text-black cursor-pointer px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors shadow-lg">
+          Your Account
+        </button> </Link>
+      <Link to="/recurator-dashboard">  <button className="bg-black text-white cursor-pointer px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold hover:bg-white hover:text-black border-1 border-white transition-colors shadow-lg">
+         Post Job
+        </button> </Link>
+>>>>>>> ef1a4f0 (Frontend Code Organzie)
         </div>
       </div>
 
