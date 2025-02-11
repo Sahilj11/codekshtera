@@ -1,9 +1,6 @@
 import React from 'react';
 import { GlobeDemo } from './GlobeDemo';
-<<<<<<< HEAD
-=======
 import { Link } from 'react-router-dom';
->>>>>>> ef1a4f0 (Frontend Code Organzie)
 
 const Home = () => {
   return (
