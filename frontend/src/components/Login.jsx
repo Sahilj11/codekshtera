@@ -25,6 +25,7 @@ const Login = () => {
         <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
           Log in to continue your job search journey!
         </p>
+
         
 
         <form className="my-8" onSubmit={handleSubmit}>
