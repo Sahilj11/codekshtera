@@ -103,157 +103,134 @@ const RecuratorDashboard = () => {
     // rank candidate api
 
     return (
-        <div className="mx-auto p-10 bg-black text-white shadow-xl grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* Left Section */}
-            <div>
-                <h1 className="text-4xl font-extrabold text-center text-purple-300 mb-8 drop-shadow-lg">
-                    Recruiter Dashboard
-                </h1>
-
-                {/* Job Listings */}
-                <div className="mb-12">
-                    <h2 className="text-2xl font-semibold text-gray-300 mb-4">
-                        Job Listings
-                    </h2>
-                    <ul className="space-y-5">
-                        {jobs.map((job) => (
-                            <li
-                                key={job.id}
-                                className="p-5 bg-gradient-to-bl from-black to-gray-900 backdrop-blur-lg border border-gray-700 rounded-xl shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105"
+        <div class="mx-auto p-10 bg-black text-white shadow-xl grid grid-cols-1 gap-10 md:grid-cols-1 lg:grid-cols-2">
+       
+        <div>
+            <h1 class="text-4xl font-extrabold text-center text-purple-300 mb-8 drop-shadow-lg">
+                Recruiter Dashboard
+            </h1>
+    
+          
+            <div class="mb-12">
+                <h2 class="text-2xl font-semibold text-gray-300 mb-4">
+                    Job Listings
+                </h2>
+                <ul class="space-y-5">
+                    {jobs.map((job) => (
+                        <li
+                            key={job.id}
+                            class="p-5 bg-gradient-to-bl from-black to-gray-900 backdrop-blur-lg border border-gray-700 rounded-xl shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            <h3 class="text-2xl font-semibold text-zinc-400">
+                                Role: {job.title}
+                            </h3>
+                            <p class="text-gray-400">Description: {job.description}</p>
+                            <p class="text-gray-500">Location: {job.location}</p>
+                            <p class="text-gray-300">Salary: {job.salary}</p>
+                            <p class="text-gray-300">Education Requirement: {job.educationRequirement}</p>
+                            <button
+                                onClick={() => fetchCandidateRanking(job.id)}
+                                class="mt-4 px-5 py-2 bg-red-500 cursor-pointer text-white rounded-lg hover:bg-red-600 focus:ring-2 focus:ring-red-400 transition duration-200"
                             >
-                                <h3 className="text-2xl font-semibold text-zinc-400">
-                                    Role: {job.title}
-                                </h3>
-                                <p className="text-gray-400">Description: {job.description}</p>
-                                <p className="text-gray-500">Location: {job.location}</p>
-                                <p className="text-gray-300">Salary: {job.salary}</p>
-                                <p className="text-gray-300">Education Requirement: {job.educationRequirement}</p>
-                                <button
-                                    onClick={() => fetchCandidateRanking(job.id)}
-                                    className="mt-4 px-5 py-2 bg-red-500 cursor-pointer text-white rounded-lg hover:bg-red-600 focus:ring-2 focus:ring-red-400 transition duration-200"
-                                >
-                                    Rank Candidate
-                                </button>
-                                <button
-                                    onClick={() => fetchJobDetails(job.id)}
-                                    className="bg-white cursor-pointer text-black rounded-lg mt-4 px-5 py-2 ml-2"
-                                >
-                                    Info
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                {/* Add New Job */}
-                <div className="mb-12">
-                    <h2 className="text-2xl font-semibold text-gray-300 mb-4">
-                        Add New Job
-                    </h2>
-                    <form onSubmit={handleAddJob} className="space-y-4">
-                        <input
-                            type="text"
-                            placeholder="Job Title"
-                            required
-                            value={jobTitle}
-                            onChange={(e) => setJobTitle(e.target.value)}
-                            className="input-field"
-                        />
-                        <textarea
-                            placeholder="Job Description"
-                            required
-                            value={jobDescription}
-                            onChange={(e) => setJobDescription(e.target.value)}
-                            className="input-field"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Job Location"
-                            required
-                            value={jobLocation}
-                            onChange={(e) => setJobLocation(e.target.value)}
-                            className="input-field"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Salary"
-                            required
-                            value={jobSalary}
-                            onChange={(e) => setJobSalary(e.target.value)}
-                            className="input-field"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Education Requirement"
-                            required
-                            value={educationRequirement}
-                            onChange={(e) => setEducationRequirement(e.target.value)}
-                            className="input-field"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Experience Required"
-                            required
-                            value={experienceRequired}
-                            onChange={(e) => setExperienceRequired(e.target.value)}
-                            className="input-field"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Skills Required"
-                            required
-                            value={skillsRequired}
-                            onChange={(e) => setSkillsRequired(e.target.value)}
-                            className="input-field"
-                        />
-                        <button className="w-full cursor-pointer py-3 bg-blue-500 text-white font-semibold rounded-lg focus:ring-2 focus:ring-purple-400 transition duration-200 shadow-lg">
-                            Add Job
-                        </button>
-                    </form>
-                </div>
+                                Rank Candidate
+                            </button>
+                            <button
+                                onClick={() => fetchJobDetails(job.id)}
+                                class="bg-white cursor-pointer text-black rounded-lg mt-4 px-5 py-2 ml-2"
+                            >
+                                Info
+                            </button>
+                        </li>
+                    ))}
+                </ul>
             </div>
-
-            {/* Right Section - Recruiter Info */}
-            {/* <div className="bg-gradient-to-bl from-black to-gray-900 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-gray-700">
-        <h2 className="text-2xl font-semibold text-gray-300 mb-4">Recruiter Info</h2>
-        <p className="text-gray-400 mb-4">
-          Manage job listings and add new positions for your company.
-        </p>
-        <p className="text-gray-400">
-          Keep job posts updated to attract the best candidates!
-        </p>
-      </div> */}
-            <div>
-                {candidaterank.map((ele, index) => (
-                    <div key={index} className="border p-4 rounded-lg shadow-md mb-4">
-                        <li>
-                            <strong>Name:</strong> {ele.candidate.name}
-                        </li>
-                        <li>
-                            <strong>Email:</strong> {ele.candidate.email}
-                        </li>
-                        <li>
-                            <strong>Phone:</strong> {ele.candidate.phone}
-                        </li>
-                        <li>
-                            <strong>Expected Salary:</strong> {ele.candidate.expectedSalary}
-                        </li>
-                        <li>
-                            <strong>Education:</strong> {ele.candidate.education}
-                        </li>
-                        <li>
-                            <strong>Experience:</strong> {ele.candidate.experience} years
-                        </li>
-                        <li>
-                            <strong>Score:</strong> {ele.score}
-                        </li>
-                        <li>
-                            <strong>Resume:</strong> {ele.candidate.resume}
-                        </li>
-                    </div>
-                ))}
+    
+           
+            <div class="mb-12">
+                <h2 class="text-2xl font-semibold text-gray-300 mb-4">
+                    Add New Job
+                </h2>
+                <form onSubmit={handleAddJob} class="space-y-4">
+                    <input
+                        type="text"
+                        placeholder="Job Title"
+                        required
+                        value={jobTitle}
+                        onChange={(e) => setJobTitle(e.target.value)}
+                        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    />
+                    <textarea
+                        placeholder="Job Description"
+                        required
+                        value={jobDescription}
+                        onChange={(e) => setJobDescription(e.target.value)}
+                        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Job Location"
+                        required
+                        value={jobLocation}
+                        onChange={(e) => setJobLocation(e.target.value)}
+                        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Salary"
+                        required
+                        value={jobSalary}
+                        onChange={(e) => setJobSalary(e.target.value)}
+                        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Education Requirement"
+                        required
+                        value={educationRequirement}
+                        onChange={(e) => setEducationRequirement(e.target.value)}
+                        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Experience Required"
+                        required
+                        value={experienceRequired}
+                        onChange={(e) => setExperienceRequired(e.target.value)}
+                        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Skills Required"
+                        required
+                        value={skillsRequired}
+                        onChange={(e) => setSkillsRequired(e.target.value)}
+                        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    />
+                    <button class="w-full cursor-pointer py-3 bg-blue-500 text-white font-semibold rounded-lg focus:ring-2 focus:ring-purple-400 transition duration-200 shadow-lg">
+                        Add Job
+                    </button>
+                </form>
             </div>
         </div>
+    
+       
+        <div>
+            {candidaterank.map((ele, index) => (
+                <div key={index} class="border p-4 rounded-lg shadow-md mb-4">
+                    <ul class="space-y-2">
+                        <li><strong>Name:</strong> {ele.candidate.name}</li>
+                        <li><strong>Email:</strong> {ele.candidate.email}</li>
+                        <li><strong>Phone:</strong> {ele.candidate.phone}</li>
+                        <li><strong>Expected Salary:</strong> {ele.candidate.expectedSalary}</li>
+                        <li><strong>Education:</strong> {ele.candidate.education}</li>
+                        <li><strong>Experience:</strong> {ele.candidate.experience} years</li>
+                        <li><strong>Score:</strong> {ele.score}</li>
+                        <li><strong>Resume:</strong> {ele.candidate.resume}</li>
+                    </ul>
+                </div>
+            ))}
+        </div>
+    </div>
     );
 };
 
