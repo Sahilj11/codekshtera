@@ -107,65 +107,66 @@ const CandidateForm = () => {
   };
 
   return (
-    <div className="bg-gradient-to-bl from-black to-gray-900 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-  <div className="w-full max-w-lg p-8 bg-gradient-to-b from-gray-800 to-black text-gray-300 shadow-2xl rounded-xl">
-    <h2 className="text-3xl font-extrabold text-white text-center mb-6">Candidate Form</h2>
+<div class="bg-gradient-to-bl from-black to-gray-900 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-10">
+  <div class="w-full max-w-lg p-8 bg-gradient-to-b from-gray-800 to-black text-gray-300 shadow-2xl rounded-xl">
+    <h2 class="text-3xl font-extrabold text-white text-center mb-6">Candidate Form</h2>
     
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} class="space-y-5 flex flex-col">
       <input 
         type="text" name="name" value={formData.name} onChange={handleChange} 
         placeholder="Full Name" required 
-        className="input-field"
+        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
       />
       <input 
         type="email" name="email" value={formData.email} onChange={handleChange} 
         placeholder="Email" required 
-        className="input-field"
+        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
       />
       <input 
         type="tel" name="phone" value={formData.phone} onChange={handleChange} 
         placeholder="Phone Number" required 
-        className="input-field"
+        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
       />
       <input 
         type="text" name="education" value={formData.education} onChange={handleChange} 
         placeholder="Education" required 
-        className="input-field"
+        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
       />
       <input 
         type="number" name="experience" value={formData.experience} onChange={handleChange} 
         placeholder="Experience (Years)" required 
-        className="input-field"
+        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
       />
       <input 
         type="text" name="expectedSalary" value={formData.expectedSalary} onChange={handleChange} 
         placeholder="Expected Salary" required 
-        className="input-field"
+        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
       />
       <input 
         type="text" name="location" value={formData.location} onChange={handleChange} 
         placeholder="Location" required 
-        className="input-field"
+        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
       />
       <input 
         type="text" name="skills" value={formData.skills.join(", ")} onChange={handleChange} 
         placeholder="Skills (comma separated)" required 
-        className="input-field"
+        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
       />
       <input 
         type="file" accept="application/pdf" onChange={extractText} required 
-        className="block w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-gray-700 file:text-white hover:file:bg-gray-600 cursor-pointer"
+        class="w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-gray-700 file:text-white hover:file:bg-gray-600 cursor-pointer"
       />
 
       <button 
         type="submit" 
-        className="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white py-3 rounded-lg font-medium tracking-wide transition-all duration-300 hover:scale-105 hover:from-gray-800 hover:to-gray-700">
+        class="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white py-3 rounded-lg font-medium tracking-wide transition-all duration-300 hover:scale-105 hover:from-gray-800 hover:to-gray-700">
         Submit
       </button>
     </form>
   </div>
   <Toaster position="top-center" reverseOrder={false} />
 </div>
+
 
   );
 };
