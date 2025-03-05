@@ -107,26 +107,66 @@ const CandidateForm = () => {
   };
 
   return (
-    <div className="bg-gradient-to-bl from-black to-gray-900 min-h-screen flex items-center justify-center">
-      <div className="max-w-lg mx-auto p-6 bg-gradient-to-b to-black from-gray-800 text-gray-400 shadow-lg rounded-lg">
-        <h2 className="text-2xl font-bold text-white text-center mb-6">Candidate Form</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Full Name" className="input-field" required />
-          <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" className="input-field" required />
-          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone Number" className="input-field" required />
-          <input type="text" name="education" value={formData.education} onChange={handleChange} placeholder="Education" className="input-field" required />
-          <input type="number" name="experience" value={formData.experience} onChange={handleChange} placeholder="Experience (Years)" className="input-field" required />
-          <input type="text" name="expectedSalary" value={formData.expectedSalary} onChange={handleChange} placeholder="Expected Salary" className="input-field" required />
-          <input type="text" name="location" value={formData.location} onChange={handleChange} placeholder="Location" className="input-field" required />
-          <input type="text" name="skills" value={formData.skills.join(", ")} onChange={handleChange} placeholder="Skills (comma separated)" className="input-field" required />
-          <input type="file" accept="application/pdf" onChange={extractText} className="input-field" required />
-          <button type="submit" className="w-full cursor-pointer bg-gray-900 text-white py-2 rounded hover:bg-gray-800 transition-all duration-300">
-            Submit
-          </button>
-        </form>
-      </div>
-      <Toaster position="top-center" reverseOrder={false} />
-    </div>
+    <div className="bg-gradient-to-bl from-black to-gray-900 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+  <div className="w-full max-w-lg p-8 bg-gradient-to-b from-gray-800 to-black text-gray-300 shadow-2xl rounded-xl">
+    <h2 className="text-3xl font-extrabold text-white text-center mb-6">Candidate Form</h2>
+    
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <input 
+        type="text" name="name" value={formData.name} onChange={handleChange} 
+        placeholder="Full Name" required 
+        className="input-field"
+      />
+      <input 
+        type="email" name="email" value={formData.email} onChange={handleChange} 
+        placeholder="Email" required 
+        className="input-field"
+      />
+      <input 
+        type="tel" name="phone" value={formData.phone} onChange={handleChange} 
+        placeholder="Phone Number" required 
+        className="input-field"
+      />
+      <input 
+        type="text" name="education" value={formData.education} onChange={handleChange} 
+        placeholder="Education" required 
+        className="input-field"
+      />
+      <input 
+        type="number" name="experience" value={formData.experience} onChange={handleChange} 
+        placeholder="Experience (Years)" required 
+        className="input-field"
+      />
+      <input 
+        type="text" name="expectedSalary" value={formData.expectedSalary} onChange={handleChange} 
+        placeholder="Expected Salary" required 
+        className="input-field"
+      />
+      <input 
+        type="text" name="location" value={formData.location} onChange={handleChange} 
+        placeholder="Location" required 
+        className="input-field"
+      />
+      <input 
+        type="text" name="skills" value={formData.skills.join(", ")} onChange={handleChange} 
+        placeholder="Skills (comma separated)" required 
+        className="input-field"
+      />
+      <input 
+        type="file" accept="application/pdf" onChange={extractText} required 
+        className="block w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-gray-700 file:text-white hover:file:bg-gray-600 cursor-pointer"
+      />
+
+      <button 
+        type="submit" 
+        className="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white py-3 rounded-lg font-medium tracking-wide transition-all duration-300 hover:scale-105 hover:from-gray-800 hover:to-gray-700">
+        Submit
+      </button>
+    </form>
+  </div>
+  <Toaster position="top-center" reverseOrder={false} />
+</div>
+
   );
 };
 
